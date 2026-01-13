@@ -8,7 +8,7 @@
     "build": "vue-tsc -b && vite build",
     "build:dedsivueui": "vite build -c vite.config.dedsivueui.ts",
     "preview": "vite preview",
-    "prepublish:dedsivueui": "npm run build:dedsivueui && copy package.dedsivueui.json dist\\package.json && copy src\\components\\README.md dist\\README.md"
+    "prepublish:dedsivueui": "npm run build:dedsivueui && copy package.dedsivueui.json dist\\package.json && copy README.md dist\\README.md"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
