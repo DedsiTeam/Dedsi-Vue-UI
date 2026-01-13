@@ -1,0 +1,30 @@
+{
+    "name": "dedsi-vue-ui",
+    "version": "0.0.3",
+    "description": "Dedsi Vue UI components library",
+    "main": "./dedsi-vue-ui.umd.js",
+    "module": "./dedsi-vue-ui.es.js",
+    "types": "./dedsi-vue-ui.es.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dedsi-vue-ui.es.js",
+            "require": "./dedsi-vue-ui.umd.js",
+            "types": "./dedsi-vue-ui.es.d.ts"
+        },
+        "./theme.css": "./theme.css"
+    },
+    "files": [
+        "*"
+    ],
+    "peerDependencies": {
+        "vue": "^3.0.0"
+    },
+    "keywords": [
+        "vue",
+        "ui",
+        "components",
+        "dedsi"
+    ],
+    "author": "",
+    "license": "MIT"
+}
