@@ -17,7 +17,7 @@ import { componentGroups } from './configs/componentGroups'
              <nav class="space-y-8">
                  <div v-for="group in componentGroups" :key="group.title">
                      <h3 class="px-3 text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center">
-                        {{ group.title.split('(')[0] }}
+                        {{ group.title }}
                         <span class="ml-auto text-[10px] bg-gray-100 text-gray-400 py-0.5 px-1.5 rounded-md font-mono">{{ group.items.length }}</span>
                      </h3>
                      <ul class="space-y-0.5">
@@ -40,8 +40,8 @@ import { componentGroups } from './configs/componentGroups'
 
     <!-- Main Content -->
     <main class="flex-1 flex flex-col min-w-0 overflow-hidden relative">
-        <div class="flex-1 overflow-auto p-4 md:p-8 scroll-smooth">
-            <div class="max-w-6xl mx-auto w-full pb-20">
+        <div class="flex-1 overflow-auto scroll-smooth">
+            <div class="max-w-7xl mx-auto w-full">
                  <router-view v-slot="{ Component }">
                     <transition name="fade" mode="out-in">
                         <component :is="Component" />

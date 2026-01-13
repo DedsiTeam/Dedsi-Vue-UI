@@ -1,5 +1,5 @@
 <template>
-    <div class="p-6 max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto">
         <div class="mb-10">
             <h1 class="font-extrabold text-gray-900 tracking-tight">Dedsi Vue UI</h1>
             <h2 class="font-extrabold text-gray-900 tracking-tight">Component Overview</h2>
