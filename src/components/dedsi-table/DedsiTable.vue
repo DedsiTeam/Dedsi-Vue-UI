@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(row, rowIndex) in paginatedData" :key="rowIndex">
+        <tr v-for="(row, rowIndex) in data" :key="rowIndex">
           <td v-if="showIndex" style="text-align: center">
             {{ (currentPage - 1) * pageSize + rowIndex + 1 }}
           </td>
@@ -25,7 +25,7 @@
             </slot>
           </td>
         </tr>
-        <tr v-if="paginatedData.length === 0">
+        <tr v-if="data.length === 0">
           <td :colspan="showIndex ? columns.length + 1 : columns.length" class="dedsi-table-empty">
             暂无数据
           </td>
@@ -134,14 +134,6 @@ const handlePageSizeChange = (val: string | number) => {
 
 // 计算总页数
 const totalPages = computed(() => Math.ceil(props.total / props.pageSize))
-
-// 当前页数据
-const paginatedData = computed(() => {
-  if (!props.pagination) return props.data
-  const start = (currentPage.value - 1) * props.pageSize
-  const end = start + props.pageSize
-  return props.data.slice(start, end)
-})
 
 // 计算显示的页码
 const displayPages = computed(() => {

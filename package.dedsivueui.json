@@ -1,6 +1,6 @@
 {
     "name": "dedsi-vue-ui",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Dedsi Vue UI components library",
     "main": "./dedsi-vue-ui.umd.js",
     "module": "./dedsi-vue-ui.es.js",
