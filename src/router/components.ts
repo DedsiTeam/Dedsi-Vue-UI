@@ -273,6 +273,12 @@ const componentsRoutes: RouteRecordRaw = {
             meta: { title: 'Dedsi TimePicker' }
         },
         {
+            path: '/components/dedsi-time-range-picker',
+            name: 'DedsiTimeRangePickerDemo',
+            component: () => import('@/views/componentViews/dedsi-time-range-picker/index.vue'),
+            meta: { title: 'Dedsi TimeRangePicker' }
+        },
+        {
             path: '/components/dedsi-month-picker',
             name: 'DedsiMonthPickerDemo',
             component: () => import('@/views/componentViews/dedsi-month-picker/index.vue'),

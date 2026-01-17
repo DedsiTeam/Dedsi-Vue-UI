@@ -46,6 +46,7 @@ import { DedsiInputPassword } from './dedsi-input-password'
 import { DedsiSelect } from './dedsi-select'
 import { DedsiDatePicker } from './dedsi-date-picker'
 import { DedsiTimePicker } from './dedsi-time-picker'
+import { DedsiTimeRangePicker } from './dedsi-time-range-picker'
 import { DedsiMonthPicker } from './dedsi-month-picker'
 import { DedsiRangePicker } from './dedsi-range-picker'
 import { DedsiRadio } from './dedsi-radio'
@@ -111,6 +112,7 @@ const components = [
     { name: 'dedsi-select', component: DedsiSelect },
     { name: 'dedsi-date-picker', component: DedsiDatePicker },
     { name: 'dedsi-time-picker', component: DedsiTimePicker },
+    { name: 'dedsi-time-range-picker', component: DedsiTimeRangePicker },
     { name: 'dedsi-month-picker', component: DedsiMonthPicker },
     { name: 'dedsi-range-picker', component: DedsiRangePicker },
     { name: 'dedsi-radio', component: DedsiRadio },
@@ -195,6 +197,7 @@ export {
     DedsiSelect,
     DedsiDatePicker,
     DedsiTimePicker,
+    DedsiTimeRangePicker,
     DedsiMonthPicker,
     DedsiRangePicker,
     DedsiRadio,

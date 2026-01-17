@@ -1,4 +1,4 @@
-import DedsiButton from './DedsiButton.vue'
+import { Button as DedsiButton } from 'ant-design-vue'
 
 export { DedsiButton }
 export default DedsiButton

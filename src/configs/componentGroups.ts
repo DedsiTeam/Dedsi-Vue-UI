@@ -64,6 +64,7 @@ export const componentGroups: ComponentGroup[] = [
             { title: 'Dedsi Select', name: 'DedsiSelectDemo', path: '/components/dedsi-select', desc: '选择器组件，用于选择一个或多个选项' },
             { title: 'Dedsi DatePicker', name: 'DedsiDatePickerDemo', path: '/components/dedsi-date-picker', desc: '日期选择器组件，用于选择日期' },
             { title: 'Dedsi TimePicker', name: 'DedsiTimePickerDemo', path: '/components/dedsi-time-picker', desc: '时间选择器组件，用于选择时间' },
+            { title: 'Dedsi TimeRangePicker', name: 'DedsiTimeRangePickerDemo', path: '/components/dedsi-time-range-picker', desc: '时间范围选择器组件，用于选择时间范围' },
             { title: 'Dedsi MonthPicker', name: 'DedsiMonthPickerDemo', path: '/components/dedsi-month-picker', desc: '月份选择器组件，用于选择月份' },
             { title: 'Dedsi RangePicker', name: 'DedsiRangePickerDemo', path: '/components/dedsi-range-picker', desc: '日期范围选择器组件，用于选择日期范围' },
             { title: 'Dedsi Radio', name: 'DedsiRadioDemo', path: '/components/dedsi-radio', desc: '单选框组件，用于单选操作' },

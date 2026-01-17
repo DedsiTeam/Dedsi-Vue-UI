@@ -4,6 +4,8 @@
 
 ```
 npm install dedsi-vue-ui
+
+pnpm add dedsi-vue-ui
 ```
 
 
