@@ -1,5 +1,4 @@
-import DedsiForm from './DedsiForm.vue'
-import DedsiFormItem from './DedsiFormItem.vue'
+﻿import { Form as DedsiForm } from 'ant-design-vue'
 
-export { DedsiForm, DedsiFormItem }
+export { DedsiForm }
 export default DedsiForm

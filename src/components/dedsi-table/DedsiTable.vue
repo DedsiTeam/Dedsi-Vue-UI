@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="dedsi-table-wrapper">
     <!-- 表格 -->
     <table class="dedsi-table" :class="{ 'dedsi-table-bordered': bordered }">
@@ -70,9 +70,9 @@
 
       <div class="dedsi-pagination-sizes">
         <DedsiSelect
-          :model-value="pageSize"
+          v-model:value="localPageSize"
           :options="pageSizeOptions"
-          style="width: 100px"
+          style="width: 110px"
           @update:model-value="handlePageSizeChange"
         />
         <span class="dedsi-pagination-sizes-text">条/页</span>
@@ -118,6 +118,14 @@ const emit = defineEmits<{
 
 const currentPage = ref(1)
 
+// 本地的每页条数，用于双向绑定
+const localPageSize = ref(props.pageSize)
+
+// 监听 props.pageSize 的变化，同步到 localPageSize
+watch(() => props.pageSize, (newSize) => {
+  localPageSize.value = newSize
+})
+
 const pageSizeOptions = [
   { label: '10 条/页', value: 10 },
   { label: '20 条/页', value: 20 },
@@ -133,7 +141,7 @@ const handlePageSizeChange = (val: string | number) => {
 }
 
 // 计算总页数
-const totalPages = computed(() => Math.ceil(props.total / props.pageSize))
+const totalPages = computed(() => Math.ceil(props.total / localPageSize.value))
 
 // 计算显示的页码
 const displayPages = computed(() => {
@@ -172,6 +180,9 @@ watch(() => props.total, () => {
     currentPage.value = Math.max(1, totalPages.value)
   }
 })
+
+// 导出 pageSize 供模板使用（计算总页数等）
+const pageSize = computed(() => localPageSize.value)
 </script>
 
 <style scoped>

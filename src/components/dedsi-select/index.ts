@@ -1,6 +1,4 @@
-import DedsiSelect from './DedsiSelect.vue'
-import type { SelectOption } from './DedsiSelect.vue'
+import { Select as DedsiSelect } from 'ant-design-vue'
 
 export { DedsiSelect }
-export type { SelectOption }
 export default DedsiSelect

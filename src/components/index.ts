@@ -1,9 +1,8 @@
-import type { App } from 'vue'
+﻿import type { App } from 'vue'
 import './theme.css'
 import 'virtual:uno.css'
 
 import { DedsiTable } from './dedsi-table'
-import { DedsiSelect } from './dedsi-select'
 import { DedsiButton } from './dedsi-button'
 import { DedsiTag } from './dedsi-tag'
 import { DedsiSplit } from './dedsi-split'
@@ -36,14 +35,35 @@ import { DedsiSkeleton } from './dedsi-skeleton'
 import { DedsiMenu } from './dedsi-menu'
 import { DedsiMessage } from './dedsi-message'
 import { DedsiModal } from './dedsi-modal'
-import { DedsiForm, DedsiFormItem } from './dedsi-form'
-import { DedsiInput } from './dedsi-input'
 import { DedsiMenuItem, DedsiSubMenu } from './dedsi-menu'
 import { DedsiRow, DedsiCol } from './dedsi-row'
+import { DedsiForm } from './dedsi-form'
+import { DedsiFormItem } from './dedsi-form-item'
+import { DedsiInput } from './dedsi-input'
+import { DedsiInputNumber } from './dedsi-input-number'
+import { DedsiTextarea } from './dedsi-textarea'
+import { DedsiInputPassword } from './dedsi-input-password'
+import { DedsiSelect } from './dedsi-select'
+import { DedsiDatePicker } from './dedsi-date-picker'
+import { DedsiTimePicker } from './dedsi-time-picker'
+import { DedsiMonthPicker } from './dedsi-month-picker'
+import { DedsiRangePicker } from './dedsi-range-picker'
+import { DedsiRadio } from './dedsi-radio'
+import { DedsiRadioGroup } from './dedsi-radio-group'
+import { DedsiCheckbox } from './dedsi-checkbox'
+import { DedsiCheckboxGroup } from './dedsi-checkbox-group'
+import { DedsiSwitch } from './dedsi-switch'
+import { DedsiSlider } from './dedsi-slider'
+import { DedsiRate } from './dedsi-rate'
+import { DedsiUpload } from './dedsi-upload'
+import { DedsiTransfer } from './dedsi-transfer'
+import { DedsiAutoComplete } from './dedsi-auto-complete'
+import { DedsiCascader } from './dedsi-cascader'
+import { DedsiTreeSelect } from './dedsi-tree-select'
+import { DedsiMentions } from './dedsi-mentions'
 
 const components = [
     { name: 'dedsi-table', component: DedsiTable },
-    { name: 'dedsi-select', component: DedsiSelect },
     { name: 'dedsi-button', component: DedsiButton },
     { name: 'dedsi-tag', component: DedsiTag },
     { name: 'dedsi-split', component: DedsiSplit },
@@ -77,13 +97,35 @@ const components = [
     { name: 'dedsi-skeleton', component: DedsiSkeleton },
     { name: 'dedsi-menu', component: DedsiMenu },
     { name: 'dedsi-drawer', component: DedsiDrawer },
-    { name: 'dedsi-form', component: DedsiForm },
-    { name: 'dedsi-form-item', component: DedsiFormItem },
-    { name: 'dedsi-input', component: DedsiInput },
     { name: 'dedsi-menu-item', component: DedsiMenuItem },
     { name: 'dedsi-sub-menu', component: DedsiSubMenu },
     { name: 'dedsi-row', component: DedsiRow },
-    { name: 'dedsi-col', component: DedsiCol }
+    { name: 'dedsi-col', component: DedsiCol },
+    // 数据录入组件
+    { name: 'dedsi-form', component: DedsiForm },
+    { name: 'dedsi-form-item', component: DedsiFormItem },
+    { name: 'dedsi-input', component: DedsiInput },
+    { name: 'dedsi-input-number', component: DedsiInputNumber },
+    { name: 'dedsi-textarea', component: DedsiTextarea },
+    { name: 'dedsi-input-password', component: DedsiInputPassword },
+    { name: 'dedsi-select', component: DedsiSelect },
+    { name: 'dedsi-date-picker', component: DedsiDatePicker },
+    { name: 'dedsi-time-picker', component: DedsiTimePicker },
+    { name: 'dedsi-month-picker', component: DedsiMonthPicker },
+    { name: 'dedsi-range-picker', component: DedsiRangePicker },
+    { name: 'dedsi-radio', component: DedsiRadio },
+    { name: 'dedsi-radio-group', component: DedsiRadioGroup },
+    { name: 'dedsi-checkbox', component: DedsiCheckbox },
+    { name: 'dedsi-checkbox-group', component: DedsiCheckboxGroup },
+    { name: 'dedsi-switch', component: DedsiSwitch },
+    { name: 'dedsi-slider', component: DedsiSlider },
+    { name: 'dedsi-rate', component: DedsiRate },
+    { name: 'dedsi-upload', component: DedsiUpload },
+    { name: 'dedsi-transfer', component: DedsiTransfer },
+    { name: 'dedsi-auto-complete', component: DedsiAutoComplete },
+    { name: 'dedsi-cascader', component: DedsiCascader },
+    { name: 'dedsi-tree-select', component: DedsiTreeSelect },
+    { name: 'dedsi-mentions', component: DedsiMentions }
 ]
 
 const install = (app: App) => {
@@ -108,7 +150,6 @@ export {
     DedsiRow,
     DedsiCol,
     DedsiTable,
-    DedsiSelect,
     DedsiButton,
     DedsiTag,
     DedsiSplit,
@@ -144,14 +185,34 @@ export {
     DedsiMenu,
     DedsiMenuItem,
     DedsiSubMenu,
+    DedsiMessage,
     DedsiForm,
     DedsiFormItem,
     DedsiInput,
-    DedsiMessage
+    DedsiInputNumber,
+    DedsiTextarea,
+    DedsiInputPassword,
+    DedsiSelect,
+    DedsiDatePicker,
+    DedsiTimePicker,
+    DedsiMonthPicker,
+    DedsiRangePicker,
+    DedsiRadio,
+    DedsiRadioGroup,
+    DedsiCheckbox,
+    DedsiCheckboxGroup,
+    DedsiSwitch,
+    DedsiSlider,
+    DedsiRate,
+    DedsiUpload,
+    DedsiTransfer,
+    DedsiAutoComplete,
+    DedsiCascader,
+    DedsiTreeSelect,
+    DedsiMentions
 }
 
 // 导出类型
 export type { Column } from './dedsi-table'
-export type { SelectOption } from './dedsi-select'
 export type { DropdownMenuItem } from './dedsi-dropdown'
 export type { MenuItem } from './dedsi-menu'

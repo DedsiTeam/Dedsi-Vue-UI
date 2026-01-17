@@ -1,4 +1,4 @@
-import { h } from 'vue'
+﻿import { h } from 'vue'
 import { AppstoreOutlined } from '@ant-design/icons-vue'
 import type { RouteRecordRaw } from 'vue-router'
 
@@ -20,22 +20,10 @@ const componentsRoutes: RouteRecordRaw = {
             meta: { title: 'Dedsi Row/Col' }
         },
         {
-            path: '/components/dedsi-input',
-            name: 'DedsiInputDemo',
-            component: () => import('@/views/componentViews/dedsi-input/index.vue'),
-            meta: { title: 'Dedsi Input' }
-        },
-        {
             path: '/components/dedsi-table',
             name: 'DedsiTableDemo',
             component: () => import('@/views/componentViews/dedsi-table/index.vue'),
             meta: { title: 'Dedsi Table' }
-        },
-        {
-            path: '/components/dedsi-select',
-            name: 'DedsiSelectDemo',
-            component: () => import('@/views/componentViews/dedsi-select/index.vue'),
-            meta: { title: 'Dedsi Select' }
         },
         {
             path: '/components/dedsi-button',
@@ -222,6 +210,157 @@ const componentsRoutes: RouteRecordRaw = {
             name: 'DedsiMenuDemo',
             component: () => import('@/views/componentViews/dedsi-menu/index.vue'),
             meta: { title: 'Dedsi Menu' }
+        },
+        // 数据录入组件
+        {
+            path: '/components/dedsi-form',
+            name: 'DedsiFormDemo',
+            component: () => import('@/views/componentViews/dedsi-form/index.vue'),
+            meta: { title: 'Dedsi Form' }
+        },
+        {
+            path: '/components/dedsi-form-item',
+            name: 'DedsiFormItemDemo',
+            component: () => import('@/views/componentViews/dedsi-form-item/index.vue'),
+            meta: { title: 'Dedsi FormItem' }
+        },
+        {
+            path: '/components/dedsi-input',
+            name: 'DedsiInputDemo',
+            component: () => import('@/views/componentViews/dedsi-input/index.vue'),
+            meta: { title: 'Dedsi Input' }
+        },
+        {
+            path: '/components/dedsi-input-number',
+            name: 'DedsiInputNumberDemo',
+            component: () => import('@/views/componentViews/dedsi-input-number/index.vue'),
+            meta: { title: 'Dedsi InputNumber' }
+        },
+        {
+            path: '/components/dedsi-textarea',
+            name: 'DedsiTextareaDemo',
+            component: () => import('@/views/componentViews/dedsi-textarea/index.vue'),
+            meta: { title: 'Dedsi Textarea' }
+        },
+        {
+            path: '/components/dedsi-input-password',
+            name: 'DedsiInputPasswordDemo',
+            component: () => import('@/views/componentViews/dedsi-input-password/index.vue'),
+            meta: { title: 'Dedsi InputPassword' }
+        },
+        {
+            path: '/components/dedsi-select',
+            name: 'DedsiSelectDemo',
+            component: () => import('@/views/componentViews/dedsi-select/index.vue'),
+            meta: { title: 'Dedsi Select' }
+        },
+        {
+            path: '/components/dedsi-option',
+            name: 'DedsiOptionDemo',
+            component: () => import('@/views/componentViews/dedsi-option/index.vue'),
+            meta: { title: 'Dedsi Option' }
+        },
+        {
+            path: '/components/dedsi-date-picker',
+            name: 'DedsiDatePickerDemo',
+            component: () => import('@/views/componentViews/dedsi-date-picker/index.vue'),
+            meta: { title: 'Dedsi DatePicker' }
+        },
+        {
+            path: '/components/dedsi-time-picker',
+            name: 'DedsiTimePickerDemo',
+            component: () => import('@/views/componentViews/dedsi-time-picker/index.vue'),
+            meta: { title: 'Dedsi TimePicker' }
+        },
+        {
+            path: '/components/dedsi-month-picker',
+            name: 'DedsiMonthPickerDemo',
+            component: () => import('@/views/componentViews/dedsi-month-picker/index.vue'),
+            meta: { title: 'Dedsi MonthPicker' }
+        },
+        {
+            path: '/components/dedsi-range-picker',
+            name: 'DedsiRangePickerDemo',
+            component: () => import('@/views/componentViews/dedsi-range-picker/index.vue'),
+            meta: { title: 'Dedsi RangePicker' }
+        },
+        {
+            path: '/components/dedsi-radio',
+            name: 'DedsiRadioDemo',
+            component: () => import('@/views/componentViews/dedsi-radio/index.vue'),
+            meta: { title: 'Dedsi Radio' }
+        },
+        {
+            path: '/components/dedsi-radio-group',
+            name: 'DedsiRadioGroupDemo',
+            component: () => import('@/views/componentViews/dedsi-radio-group/index.vue'),
+            meta: { title: 'Dedsi RadioGroup' }
+        },
+        {
+            path: '/components/dedsi-checkbox',
+            name: 'DedsiCheckboxDemo',
+            component: () => import('@/views/componentViews/dedsi-checkbox/index.vue'),
+            meta: { title: 'Dedsi Checkbox' }
+        },
+        {
+            path: '/components/dedsi-checkbox-group',
+            name: 'DedsiCheckboxGroupDemo',
+            component: () => import('@/views/componentViews/dedsi-checkbox-group/index.vue'),
+            meta: { title: 'Dedsi CheckboxGroup' }
+        },
+        {
+            path: '/components/dedsi-switch',
+            name: 'DedsiSwitchDemo',
+            component: () => import('@/views/componentViews/dedsi-switch/index.vue'),
+            meta: { title: 'Dedsi Switch' }
+        },
+        {
+            path: '/components/dedsi-slider',
+            name: 'DedsiSliderDemo',
+            component: () => import('@/views/componentViews/dedsi-slider/index.vue'),
+            meta: { title: 'Dedsi Slider' }
+        },
+        {
+            path: '/components/dedsi-rate',
+            name: 'DedsiRateDemo',
+            component: () => import('@/views/componentViews/dedsi-rate/index.vue'),
+            meta: { title: 'Dedsi Rate' }
+        },
+        {
+            path: '/components/dedsi-upload',
+            name: 'DedsiUploadDemo',
+            component: () => import('@/views/componentViews/dedsi-upload/index.vue'),
+            meta: { title: 'Dedsi Upload' }
+        },
+        {
+            path: '/components/dedsi-transfer',
+            name: 'DedsiTransferDemo',
+            component: () => import('@/views/componentViews/dedsi-transfer/index.vue'),
+            meta: { title: 'Dedsi Transfer' }
+        },
+        {
+            path: '/components/dedsi-auto-complete',
+            name: 'DedsiAutoCompleteDemo',
+            component: () => import('@/views/componentViews/dedsi-auto-complete/index.vue'),
+            meta: { title: 'Dedsi AutoComplete' }
+        },
+        {
+            path: '/components/dedsi-cascader',
+            name: 'DedsiCascaderDemo',
+            component: () => import('@/views/componentViews/dedsi-cascader/index.vue'),
+            meta: { title: 'Dedsi Cascader' }
+        },
+        {
+            path: '/components/dedsi-tree-select',
+            name: 'DedsiTreeSelectDemo',
+            component: () => import('@/views/componentViews/dedsi-tree-select/index.vue'),
+            meta: { title: 'Dedsi TreeSelect' }
+        },
+        {
+            path: '/components/dedsi-mentions',
+            name: 'DedsiMentionsDemo',
+            component: () => import('@/views/componentViews/dedsi-mentions/index.vue'),
+            meta: { title: 'Dedsi Mentions' }
         }
     ]
 }

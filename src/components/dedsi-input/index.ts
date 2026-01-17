@@ -1,4 +1,4 @@
-import DedsiInput from './DedsiInput.vue'
+﻿import { Input as DedsiInput } from 'ant-design-vue'
 
 export { DedsiInput }
 export default DedsiInput

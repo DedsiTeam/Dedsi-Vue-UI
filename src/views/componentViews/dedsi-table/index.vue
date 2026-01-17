@@ -73,7 +73,7 @@ const generateData = () => {
   const departments = ['技术部', '产品部', '设计部', '市场部', '运营部']
   const data = []
   
-  for (let i = 1; i <= 56; i++) {
+  for (let i = 1; i <= 10; i++) {
     data.push({
       id: i,
       name: names[i % names.length],
