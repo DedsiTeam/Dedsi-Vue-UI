@@ -1,4 +1,4 @@
-import { Select as DedsiSelect } from 'ant-design-vue'
+import { Select as DedsiSelect, SelectOption as DedsiSelectOption } from 'ant-design-vue'
 
-export { DedsiSelect }
+export { DedsiSelect, DedsiSelectOption }
 export default DedsiSelect

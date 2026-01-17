@@ -43,14 +43,14 @@ import { DedsiInput } from './dedsi-input'
 import { DedsiInputNumber } from './dedsi-input-number'
 import { DedsiTextarea } from './dedsi-textarea'
 import { DedsiInputPassword } from './dedsi-input-password'
-import { DedsiSelect } from './dedsi-select'
+import { DedsiSelect, DedsiSelectOption } from './dedsi-select'
 import { DedsiDatePicker } from './dedsi-date-picker'
 import { DedsiTimePicker } from './dedsi-time-picker'
 import { DedsiTimeRangePicker } from './dedsi-time-range-picker'
 import { DedsiMonthPicker } from './dedsi-month-picker'
 import { DedsiRangePicker } from './dedsi-range-picker'
 import { DedsiRadio } from './dedsi-radio'
-import { DedsiRadioGroup } from './dedsi-radio-group'
+import { DedsiRadioGroup, DedsiRadioButton } from './dedsi-radio-group'
 import { DedsiCheckbox } from './dedsi-checkbox'
 import { DedsiCheckboxGroup } from './dedsi-checkbox-group'
 import { DedsiSwitch } from './dedsi-switch'
@@ -110,6 +110,7 @@ const components = [
     { name: 'dedsi-textarea', component: DedsiTextarea },
     { name: 'dedsi-input-password', component: DedsiInputPassword },
     { name: 'dedsi-select', component: DedsiSelect },
+    { name: 'dedsi-select-option', component: DedsiSelectOption },
     { name: 'dedsi-date-picker', component: DedsiDatePicker },
     { name: 'dedsi-time-picker', component: DedsiTimePicker },
     { name: 'dedsi-time-range-picker', component: DedsiTimeRangePicker },
@@ -117,6 +118,7 @@ const components = [
     { name: 'dedsi-range-picker', component: DedsiRangePicker },
     { name: 'dedsi-radio', component: DedsiRadio },
     { name: 'dedsi-radio-group', component: DedsiRadioGroup },
+    { name: 'dedsi-radio-button', component: DedsiRadioButton },
     { name: 'dedsi-checkbox', component: DedsiCheckbox },
     { name: 'dedsi-checkbox-group', component: DedsiCheckboxGroup },
     { name: 'dedsi-switch', component: DedsiSwitch },
@@ -195,6 +197,7 @@ export {
     DedsiTextarea,
     DedsiInputPassword,
     DedsiSelect,
+    DedsiSelectOption,
     DedsiDatePicker,
     DedsiTimePicker,
     DedsiTimeRangePicker,
@@ -202,6 +205,7 @@ export {
     DedsiRangePicker,
     DedsiRadio,
     DedsiRadioGroup,
+    DedsiRadioButton,
     DedsiCheckbox,
     DedsiCheckboxGroup,
     DedsiSwitch,

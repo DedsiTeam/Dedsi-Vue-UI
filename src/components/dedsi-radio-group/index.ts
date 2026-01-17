@@ -1,4 +1,4 @@
-﻿import { RadioGroup as DedsiRadioGroup } from 'ant-design-vue'
+﻿import { RadioGroup as DedsiRadioGroup, RadioButton as DedsiRadioButton } from 'ant-design-vue'
 
-export { DedsiRadioGroup }
+export { DedsiRadioGroup, DedsiRadioButton }
 export default DedsiRadioGroup
