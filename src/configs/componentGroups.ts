@@ -51,6 +51,7 @@ export const componentGroups: ComponentGroup[] = [
             { title: 'Dedsi Countdown', name: 'DedsiCountdownDemo', path: '/components/dedsi-countdown', desc: '倒计时，用于显示倒计时数值' },
             { title: 'Dedsi Marquee', name: 'DedsiMarqueeDemo', path: '/components/dedsi-marquee', desc: '跑马灯，用于滚动显示文本' },
             { title: 'Dedsi Empty', name: 'DedsiEmptyDemo', path: '/components/dedsi-empty', desc: '空状态，当数据为空时显示' },
+            { title: 'Dedsi Result', name: 'DedsiResultDemo', path: '/components/dedsi-result', desc: '结果，用于反馈一系列操作任务的处理结果' },
         ]
     },
     {

@@ -27,6 +27,7 @@ import { DedsiTypography } from './dedsi-typography'
 import { DedsiDropdown } from './dedsi-dropdown'
 import { DedsiCountdown } from './dedsi-countdown'
 import { DedsiEmpty } from './dedsi-empty'
+import { DedsiResult } from './dedsi-result'
 import { DedsiDialog } from './dedsi-dialog'
 import { DedsiDrawer } from './dedsi-drawer'
 import { DedsiMarquee } from './dedsi-marquee'
@@ -91,6 +92,7 @@ const components = [
     { name: 'dedsi-dropdown', component: DedsiDropdown },
     { name: 'dedsi-countdown', component: DedsiCountdown },
     { name: 'dedsi-empty', component: DedsiEmpty },
+    { name: 'dedsi-result', component: DedsiResult },
     { name: 'dedsi-dialog', component: DedsiDialog },
     { name: 'dedsi-modal', component: DedsiModal },
     { name: 'dedsi-marquee', component: DedsiMarquee },
@@ -180,6 +182,7 @@ export {
     DedsiDropdown,
     DedsiCountdown,
     DedsiEmpty,
+    DedsiResult,
     DedsiDialog,
     DedsiDrawer,
     DedsiModal,

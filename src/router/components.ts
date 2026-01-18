@@ -164,6 +164,12 @@ const componentsRoutes: RouteRecordRaw = {
             meta: { title: 'Dedsi Empty' }
         },
         {
+            path: '/components/dedsi-result',
+            name: 'DedsiResultDemo',
+            component: () => import('@/views/componentViews/dedsi-result/index.vue'),
+            meta: { title: 'Dedsi Result' }
+        },
+        {
             path: '/components/dedsi-drawer',
             name: 'DedsiDrawerDemo',
             component: () => import('@/views/componentViews/dedsi-drawer/index.vue'),
