@@ -241,10 +241,10 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiAlert type="success" title="成功提示" description="操作已完成" />
+<dedsi-alert type="success" title="成功提示" description="操作已完成" />
 
 <!-- 可关闭 -->
-<DedsiAlert
+<dedsi-alert
   type="warning"
   title="警告"
   description="请注意查看"
@@ -253,10 +253,10 @@ app.use(DedsiButton)
 />
 
 <!-- 自定义内容 -->
-<DedsiAlert type="error">
+<dedsi-alert type="error">
   <template #title>错误</template>
   <p>发生错误，请重试</p>
-</DedsiAlert>
+</dedsi-alert>
 ```
 
 ---
@@ -288,15 +288,15 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <!-- 图片头像 -->
-<DedsiAvatar src="https://example.com/avatar.png" size="large" />
+<dedsi-avatar src="https://example.com/avatar.png" size="large" />
 
 <!-- 文字头像 -->
-<DedsiAvatar shape="square">User</DedsiAvatar>
+<dedsi-avatar shape="square">User</dedsi-avatar>
 
 <!-- 图标头像 -->
-<DedsiAvatar>
+<dedsi-avatar>
   <template #icon><UserIcon /></template>
-</DedsiAvatar>
+</dedsi-avatar>
 ```
 
 ---
@@ -316,19 +316,19 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <!-- 数字徽标 -->
-<DedsiBadge :value="5">
-  <DedsiButton>消息</DedsiButton>
-</DedsiBadge>
+<dedsi-badge :value="5">
+  <dedsi-button>消息</dedsi-button>
+</dedsi-badge>
 
 <!-- 最大值 -->
-<DedsiBadge :value="100" :max="99">
-  <DedsiButton>通知</DedsiButton>
-</DedsiBadge>
+<dedsi-badge :value="100" :max="99">
+  <dedsi-button>通知</dedsi-button>
+</dedsi-badge>
 
 <!-- 小圆点 -->
-<DedsiBadge isDot>
-  <DedsiButton>状态</DedsiButton>
-</DedsiBadge>
+<dedsi-badge isDot>
+  <dedsi-button>状态</dedsi-button>
+</dedsi-badge>
 ```
 
 ---
@@ -355,11 +355,11 @@ app.use(DedsiButton)
 
 **使用示例**：
 ```vue
-<DedsiBreadcrumb separator=">">
-  <DedsiBreadcrumbItem to="/">首页</DedsiBreadcrumbItem>
-  <DedsiBreadcrumbItem to="/components">组件</DedsiBreadcrumbItem>
-  <DedsiBreadcrumbItem>面包屑</DedsiBreadcrumbItem>
-</DedsiBreadcrumb>
+<dedsi-breadcrumb separator=">">
+  <dedsi-breadcrumb-item to="/">首页</dedsi-breadcrumb-item>
+  <dedsi-breadcrumb-item to="/components">组件</dedsi-breadcrumb-item>
+  <dedsi-breadcrumb-item>面包屑</dedsi-breadcrumb-item>
+</dedsi-breadcrumb>
 ```
 
 ---
@@ -388,20 +388,20 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <!-- 基础卡片 -->
-<DedsiCard title="卡片标题">
+<dedsi-card title="卡片标题">
   <p>卡片内容</p>
-</DedsiCard>
+</dedsi-card>
 
 <!-- 带额外操作 -->
-<DedsiCard>
+<dedsi-card>
   <template #title>
     <span>标题</span>
   </template>
   <template #extra>
-    <DedsiButton>更多</DedsiButton>
+    <dedsi-button>更多</dedsi-button>
   </template>
   <p>内容</p>
-</DedsiCard>
+</dedsi-card>
 ```
 
 ---
@@ -419,17 +419,17 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <!-- 水平分割线 -->
-<DedsiDivider>文本</DedsiDivider>
+<dedsi-divider>文本</dedsi-divider>
 
 <!-- 虚线 -->
-<DedsiDivider dashed />
+<dedsi-divider dashed />
 
 <!-- 垂直分割线 -->
-<DedsiSpace>
+<dedsi-space>
   <span>文本1</span>
-  <DedsiDivider direction="vertical" />
+  <dedsi-divider direction="vertical" />
   <span>文本2</span>
-</DedsiSpace>
+</dedsi-space>
 ```
 
 ---
@@ -454,12 +454,12 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiEmpty description="暂无数据" />
+<dedsi-empty description="暂无数据" />
 
 <!-- 自定义内容 -->
-<DedsiEmpty>
-  <DedsiButton>创建</DedsiButton>
-</DedsiEmpty>
+<dedsi-empty>
+  <dedsi-button>创建</dedsi-button>
+</dedsi-empty>
 ```
 
 ---
@@ -486,13 +486,13 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <!-- 基础标签 -->
-<DedsiTag type="success">成功</DedsiTag>
+<dedsi-tag type="success">成功</dedsi-tag>
 
 <!-- 可关闭 -->
-<DedsiTag closable @close="handleClose">可关闭</DedsiTag>
+<dedsi-tag closable @close="handleClose">可关闭</dedsi-tag>
 
 <!-- 自定义颜色 -->
-<DedsiTag color="#f50" backgroundColor="#fff1f0">自定义</DedsiTag>
+<dedsi-tag color="#f50" backgroundColor="#fff1f0">自定义</dedsi-tag>
 ```
 
 ---
@@ -511,16 +511,16 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <!-- 水平间距 -->
-<DedsiSpace :size="middle">
-  <DedsiButton>按钮1</DedsiButton>
-  <DedsiButton>按钮2</DedsiButton>
-</DedsiSpace>
+<dedsi-space :size="middle">
+  <dedsi-button>按钮1</dedsi-button>
+  <dedsi-button>按钮2</dedsi-button>
+</dedsi-space>
 
 <!-- 垂直间距 -->
-<DedsiSpace direction="vertical" :size="20">
+<dedsi-space direction="vertical" :size="20">
   <div>内容1</div>
   <div>内容2</div>
-</DedsiSpace>
+</dedsi-space>
 ```
 
 ---
@@ -544,14 +544,14 @@ app.use(DedsiButton)
 
 **使用示例**：
 ```vue
-<DedsiSplit :gap="20">
+<dedsi-split :gap="20">
   <template #left>
     <p>左侧内容</p>
   </template>
   <template #right>
     <p>右侧内容</p>
   </template>
-</DedsiSplit>
+</dedsi-split>
 ```
 
 ---
@@ -590,22 +590,22 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiRow :gutter="16">
-  <DedsiCol :span="12">col-12</DedsiCol>
-  <DedsiCol :span="12">col-12</DedsiCol>
-</DedsiRow>
+<dedsi-row :gutter="16">
+  <dedsi-col :span="12">col-12</dedsi-col>
+  <dedsi-col :span="12">col-12</dedsi-col>
+</dedsi-row>
 
 <!-- 偏移 -->
-<DedsiRow>
-  <DedsiCol :span="8" :offset="8">col-8 offset-8</DedsiCol>
-</DedsiRow>
+<dedsi-row>
+  <dedsi-col :span="8" :offset="8">col-8 offset-8</dedsi-col>
+</dedsi-row>
 
 <!-- 响应式 -->
-<DedsiRow>
-  <DedsiCol :xs="24" :sm="12" :md="8">响应式</DedsiCol>
-  <DedsiCol :xs="24" :sm="12" :md="8">响应式</DedsiCol>
-  <DedsiCol :xs="24" :sm="12" :md="8">响应式</DedsiCol>
-</DedsiRow>
+<dedsi-row>
+  <dedsi-col :xs="24" :sm="12" :md="8">响应式</dedsi-col>
+  <dedsi-col :xs="24" :sm="12" :md="8">响应式</dedsi-col>
+  <dedsi-col :xs="24" :sm="12" :md="8">响应式</dedsi-col>
+</dedsi-row>
 ```
 
 ---
@@ -638,9 +638,9 @@ app.use(DedsiButton)
 **使用示例**：
 ```vue
 <template>
-  <DedsiScrollbar ref="scrollbar" height="400px">
+  <dedsi-scrollbar ref="scrollbar" height="400px">
     <div v-for="i in 100" :key="i">内容 {{ i }}</div>
-  </DedsiScrollbar>
+  </dedsi-scrollbar>
 </template>
 
 <script setup lang="ts">
@@ -681,19 +681,19 @@ const scrollToTop = () => {
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiSkeleton :loading="loading">
+<dedsi-skeleton :loading="loading">
   <div>实际内容</div>
-</DedsiSkeleton>
+</dedsi-skeleton>
 
 <!-- 复杂配置 -->
-<DedsiSkeleton
+<dedsi-skeleton
   :loading="loading"
   :avatar="true"
   avatarSize="large"
   :paragraph="{ rows: 4 }"
 >
   <UserProfile />
-</DedsiSkeleton>
+</dedsi-skeleton>
 ```
 
 ---
@@ -734,7 +734,7 @@ interface MenuItem {
 **使用示例**：
 ```vue
 <template>
-  <DedsiMenu
+  <dedsi-menu
     :items="menuItems"
     v-model:selectedKeys="selectedKeys"
     v-model:openKeys="openKeys"
@@ -814,22 +814,22 @@ const handleMenuClick = (item: any) => {
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiTabs v-model:activeKey="activeKey">
-  <DedsiTabPane name="1" label="标签1">内容1</DedsiTabPane>
-  <DedsiTabPane name="2" label="标签2">内容2</DedsiTabPane>
-</DedsiTabs>
+<dedsi-tabs v-model:activeKey="activeKey">
+  <dedsi-tab-pane name="1" label="标签1">内容1</dedsi-tab-pane>
+  <dedsi-tab-pane name="2" label="标签2">内容2</dedsi-tab-pane>
+</dedsi-tabs>
 
 <!-- 卡片类型 -->
-<DedsiTabs type="card">
-  <DedsiTabPane name="1" label="标签1">内容1</DedsiTabPane>
-</DedsiTabs>
+<dedsi-tabs type="card">
+  <dedsi-tab-pane name="1" label="标签1">内容1</dedsi-tab-pane>
+</dedsi-tabs>
 
 <!-- 可编辑 -->
-<DedsiTabs v-model:activeKey="activeKey" type="editable-card" @edit="handleEdit">
-  <DedsiTabPane v-for="tab in tabs" :key="tab.key" :name="tab.key" :label="tab.label">
+<dedsi-tabs v-model:activeKey="activeKey" type="editable-card" @edit="handleEdit">
+  <dedsi-tab-pane v-for="tab in tabs" :key="tab.key" :name="tab.key" :label="tab.label">
     {{ tab.content }}
-  </DedsiTabPane>
-</DedsiTabs>
+  </dedsi-tab-pane>
+</dedsi-tabs>
 ```
 
 ---
@@ -865,9 +865,9 @@ interface DropdownMenuItem {
 **使用示例**：
 ```vue
 <template>
-  <DedsiDropdown :menu="menuItems" @select="handleSelect">
-    <DedsiButton>下拉菜单</DedsiButton>
-  </DedsiDropdown>
+  <dedsi-dropdown :menu="menuItems" @select="handleSelect">
+    <dedsi-button>下拉菜单</dedsi-button>
+  </dedsi-dropdown>
 </template>
 
 <script setup lang="ts">
@@ -914,13 +914,13 @@ const handleSelect = (key: string | number) => {
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiStatistic title="总用户数" :value="12345" />
+<dedsi-statistic title="总用户数" :value="12345" />
 
 <!-- 带前后缀 -->
-<DedsiStatistic title="账户余额" :value="1234.56" prefix="¥" :precision="2" />
+<dedsi-statistic title="账户余额" :value="1234.56" prefix="¥" :precision="2" />
 
 <!-- 自定义样式 -->
-<DedsiStatistic
+<dedsi-statistic
   title="成交量"
   :value="12345"
   :contentStyle="{ color: '#3f8600', fontSize: '24px' }"
@@ -943,15 +943,15 @@ const handleSelect = (key: string | number) => {
 **使用示例**：
 ```vue
 <!-- 自动转换 -->
-<DedsiNumberConverter :value="12345" />
+<dedsi-number-converter :value="12345" />
 <!-- 显示：1.23万 -->
 
 <!-- 指定单位 -->
-<DedsiNumberConverter :value="12345" targetUnit="wan" suffix="元" />
+<dedsi-number-converter :value="12345" targetUnit="wan" suffix="元" />
 <!-- 显示：1.23万元 -->
 
 <!-- 千万级别 -->
-<DedsiNumberConverter :value="12345678" targetUnit="qianwan" />
+<dedsi-number-converter :value="12345678" targetUnit="qianwan" />
 <!-- 显示：1234.57千万 -->
 ```
 
@@ -986,10 +986,10 @@ const handleSelect = (key: string | number) => {
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiCountdown :value="Date.now() + 10000000" />
+<dedsi-countdown :value="Date.now() + 10000000" />
 
 <!-- 自定义格式 -->
-<DedsiCountdown
+<dedsi-countdown
   title="活动倒计时"
   :value="targetTime"
   format="DD天 HH:mm:ss"
@@ -1039,7 +1039,7 @@ interface Column {
 **使用示例**：
 ```vue
 <template>
-  <DedsiTable
+  <dedsi-table
     :data="tableData"
     :columns="columns"
     :total="total"
@@ -1049,17 +1049,17 @@ interface Column {
   >
     <!-- 自定义操作列 -->
     <template #actions="{ row }">
-      <DedsiButton @click="edit(row)">编辑</DedsiButton>
-      <DedsiButton @click="del(row)">删除</DedsiButton>
+      <dedsi-button @click="edit(row)">编辑</dedsi-button>
+      <dedsi-button @click="del(row)">删除</dedsi-button>
     </template>
 
     <!-- 自定义状态列 -->
     <template #status="{ value }">
-      <DedsiTag :type="value === 1 ? 'success' : 'danger'">
+      <dedsi-tag :type="value === 1 ? 'success' : 'danger'">
         {{ value === 1 ? '启用' : '禁用' }}
-      </DedsiTag>
+      </dedsi-tag>
     </template>
-  </DedsiTable>
+  </dedsi-table>
 </template>
 
 <script setup lang="ts">
@@ -1114,27 +1114,27 @@ const handlePageChange = (page: number) => {
 **使用示例**：
 ```vue
 <!-- 基础文本 -->
-<DedsiTypography>普通文本</DedsiTypography>
+<dedsi-typography>普通文本</dedsi-typography>
 
 <!-- 次要文本 -->
-<DedsiTypography type="secondary">次要文本</DedsiTypography>
+<dedsi-typography type="secondary">次要文本</dedsi-typography>
 
 <!-- 可复制 -->
-<DedsiTypography copyable>这段文字可以复制</DedsiTypography>
+<dedsi-typography copyable>这段文字可以复制</dedsi-typography>
 
 <!-- 可编辑 -->
-<DedsiTypography editable v-model="text">{{ text }}</DedsiTypography>
+<dedsi-typography editable v-model="text">{{ text }}</dedsi-typography>
 
 <!-- 省略 -->
-<DedsiTypography :ellipsis="{ rows: 2 }">
+<dedsi-typography :ellipsis="{ rows: 2 }">
   这是一段很长的文字内容，超过两行后会显示省略号...
-</DedsiTypography>
+</dedsi-typography>
 
 <!-- 组合使用 -->
-<DedsiTypography strong underline>
-  <DedsiTypography code>重要</DedsiTypography>
+<dedsi-typography strong underline>
+  <dedsi-typography code>重要</dedsi-typography>
   提示
-</DedsiTypography>
+</dedsi-typography>
 ```
 
 ---
@@ -1156,14 +1156,14 @@ const handlePageChange = (page: number) => {
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiImage
+<dedsi-image
   src="https://example.com/image.jpg"
   width="200px"
   height="200px"
 />
 
 <!-- 多图预览 -->
-<DedsiImage
+<dedsi-image
   :src="currentImage"
   :previewSrcList="imageList"
   fit="cover"
@@ -1194,10 +1194,10 @@ const handlePageChange = (page: number) => {
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiQRCode value="https://example.com" />
+<dedsi-qrcode value="https://example.com" />
 
 <!-- 自定义样式 -->
-<DedsiQRCode
+<dedsi-qrcode
   value="https://example.com"
   :size="200"
   color="#1890ff"
@@ -1246,7 +1246,7 @@ const handlePageChange = (page: number) => {
 **使用示例**：
 ```vue
 <template>
-  <DedsiDialog
+  <dedsi-dialog
     v-model:visible="visible"
     title="对话框"
     :confirmLoading="loading"
@@ -1254,7 +1254,7 @@ const handlePageChange = (page: number) => {
     @cancel="handleCancel"
   >
     <p>对话框内容</p>
-  </DedsiDialog>
+  </dedsi-dialog>
 </template>
 
 <script setup lang="ts">
@@ -1338,7 +1338,7 @@ const handleCancel = () => {
 **使用示例**：
 ```vue
 <template>
-  <DedsiDrawer
+  <dedsi-drawer
     v-model:visible="visible"
     title="抽屉标题"
     placement="right"
@@ -1346,9 +1346,9 @@ const handleCancel = () => {
   >
     <p>抽屉内容</p>
     <template #footer>
-      <DedsiButton @click="visible = false">关闭</DedsiButton>
+      <dedsi-button @click="visible = false">关闭</dedsi-button>
     </template>
-  </DedsiDrawer>
+  </dedsi-drawer>
 </template>
 ```
 
@@ -1373,7 +1373,7 @@ const handleCancel = () => {
 **使用示例**：
 ```vue
 <!-- 声明式使用 -->
-<DedsiMessage content="这是一条消息" type="success" :duration="2000" />
+<dedsi-message content="这是一条消息" type="success" :duration="2000" />
 
 <!-- 命令式使用（推荐） -->
 <script setup lang="ts">
@@ -1420,13 +1420,13 @@ const showMessage = () => {
 
 **使用示例**：
 ```vue
-<DedsiPopconfirm
+<dedsi-popconfirm
   title="确定要删除吗？"
   @confirm="handleDelete"
   @cancel="handleCancel"
 >
-  <DedsiButton danger>删除</DedsiButton>
-</DedsiPopconfirm>
+  <dedsi-button danger>删除</dedsi-button>
+</dedsi-popconfirm>
 ```
 
 ---
@@ -1453,18 +1453,18 @@ const showMessage = () => {
 **使用示例**：
 ```vue
 <!-- 基础用法 -->
-<DedsiPopover content="这是内容" title="标题">
-  <DedsiButton>悬停显示</DedsiButton>
-</DedsiPopover>
+<dedsi-popover content="这是内容" title="标题">
+  <dedsi-button>悬停显示</dedsi-button>
+</dedsi-popover>
 
 <!-- 自定义内容 -->
-<DedsiPopover>
+<dedsi-popover>
   <template #content>
     <div>自定义内容</div>
-    <DedsiButton>操作</DedsiButton>
+    <dedsi-button>操作</dedsi-button>
   </template>
-  <DedsiButton>点击显示</DedsiButton>
-</DedsiPopover>
+  <dedsi-button>点击显示</dedsi-button>
+</dedsi-popover>
 ```
 
 ---
@@ -1481,9 +1481,9 @@ const showMessage = () => {
 
 **使用示例**：
 ```vue
-<DedsiTooltip content="这是提示文字">
-  <DedsiButton>悬停查看提示</DedsiButton>
-</DedsiTooltip>
+<dedsi-tooltip content="这是提示文字">
+  <dedsi-button>悬停查看提示</dedsi-button>
+</dedsi-tooltip>
 ```
 
 ---
@@ -1511,18 +1511,18 @@ const showMessage = () => {
 **使用示例**：
 ```vue
 <!-- 成功结果 -->
-<DedsiResult status="success" title="操作成功" subTitle="预计2小时内到达">
+<dedsi-result status="success" title="操作成功" subTitle="预计2小时内到达">
   <template #extra>
-    <DedsiButton type="primary">返回首页</DedsiButton>
+    <dedsi-button type="primary">返回首页</dedsi-button>
   </template>
-</DedsiResult>
+</dedsi-result>
 
 <!-- 404 页面 -->
-<DedsiResult status="404" title="404" subTitle="抱歉，您访问的页面不存在">
+<dedsi-result status="404" title="404" subTitle="抱歉，您访问的页面不存在">
   <template #extra>
-    <DedsiButton type="primary">返回首页</DedsiButton>
+    <dedsi-button type="primary">返回首页</dedsi-button>
   </template>
-</DedsiResult>
+</dedsi-result>
 ```
 
 ---
@@ -1598,7 +1598,7 @@ interface SegmentedOption {
 **使用示例**：
 ```vue
 <template>
-  <DedsiSegmented
+  <dedsi-segmented
     v-model="value"
     :options="options"
     @change="handleChange"
@@ -1637,9 +1637,9 @@ const handleChange = (val: string | number) => {
 
 **使用示例**：
 ```vue
-<DedsiMarquee :speed="100" direction="ltr">
+<dedsi-marquee :speed="100" direction="ltr">
   <span>这是一条滚动的公告信息</span>
-</DedsiMarquee>
+</dedsi-marquee>
 ```
 
 ---
@@ -1698,13 +1698,13 @@ app.use(DedsiVueUI)
 所有组件的事件都使用 Vue 3 标准事件命名：
 ```vue
 <!-- ✅ 推荐：使用 kebab-case 事件名 -->
-<DedsiDialog @update:visible="handleVisibleChange" />
-<DedsiTable @page-change="handlePageChange" />
-<DedsiTabs @update:activeKey="handleTabChange" />
+<dedsi-dialog @update:visible="handleVisibleChange" />
+<dedsi-table @page-change="handlePageChange" />
+<dedsi-tabs @update:activeKey="handleTabChange" />
 
 <!-- ❌ 避免：使用 camelCase -->
-<DedsiDialog @visibleChange="..." />
-<DedsiDialog @onVisibleChange="..." />
+<dedsi-dialog @visibleChange="..." />
+<dedsi-dialog @onVisibleChange="..." />
 ```
 
 **事件回调类型定义**：
@@ -1723,16 +1723,16 @@ const handlePageChange = (page: number) => {
 使用 `v-model` 进行双向绑定，遵循 Vue 3 规范：
 ```vue
 <!-- 带参数的 v-model（推荐） -->
-<DedsiTabs v-model:activeKey="activeKey" />
-<DedsiMenu v-model:selectedKeys="selectedKeys" />
-<DedsiMenu v-model:openKeys="openKeys" />
+<dedsi-tabs v-model:activeKey="activeKey" />
+<dedsi-menu v-model:selectedKeys="selectedKeys" />
+<dedsi-menu v-model:openKeys="openKeys" />
 
 <!-- 不带参数的 v-model（默认 modelValue） -->
-<DedsiSegmented v-model="value" />
-<DedsiInput v-model="inputValue" />
+<dedsi-segmented v-model="value" />
+<dedsi-input v-model="inputValue" />
 
 <!-- 完整等价形式 -->
-<DedsiTabs
+<dedsi-tabs
   :activeKey="activeKey"
   @update:activeKey="val => activeKey = val"
 />
@@ -1764,24 +1764,24 @@ const columns: Column[] = [
 
 **具名插槽**：
 ```vue
-<DedsiCard>
+<dedsi-card>
   <template #title>
     <span>自定义标题</span>
   </template>
   <template #extra>
-    <DedsiButton>更多</DedsiButton>
+    <dedsi-button>更多</dedsi-button>
   </template>
   <p>卡片内容</p>
-</DedsiCard>
+</dedsi-card>
 ```
 
 **作用域插槽**：
 ```vue
-<DedsiTable :data="data" :columns="columns">
+<dedsi-table :data="data" :columns="columns">
   <template #name="{ row, value }">
     <a @click="handleClick(row)">{{ value }}</a>
   </template>
-</DedsiTable>
+</dedsi-table>
 ```
 
 ### 6. 样式定制
@@ -1789,8 +1789,8 @@ const columns: Column[] = [
 **通过 props 修改样式**：
 ```vue
 <!-- 使用组件提供的样式 props -->
-<DedsiCard :bodyStyle="{ padding: '20px' }" />
-<DedsiStatistic :contentStyle="{ color: '#3f8600' }" />
+<dedsi-card :bodyStyle="{ padding: '20px' }" />
+<dedsi-statistic :contentStyle="{ color: '#3f8600' }" />
 ```
 
 **通过 CSS 覆盖**（谨慎使用）：
@@ -1808,9 +1808,9 @@ const columns: Column[] = [
 **合理使用 v-once**：
 ```vue
 <!-- 静态内容使用 v-once 避免不必要的更新 -->
-<DedsiCard v-once>
+<dedsi-card v-once>
   <h1>静态标题</h1>
-</DedsiCard>
+</dedsi-card>
 ```
 
 **避免不必要的响应式**：
@@ -2022,21 +2022,3 @@ type DrawerPlacement = 'left' | 'right' | 'top' | 'bottom'
 // QRCode 容错级别
 type QRCodeErrorLevel = 'L' | 'M' | 'Q' | 'H'
 ```
-
----
-
-**文档元数据**：
-
-| 项目 | 值 |
-|------|------|
-| 文档名称 | Dedsi-Vue-UI 组件库 SKILL 文档 |
-| 文档版本 | 1.0.0 |
-| 组件库版本 | 0.0.9 |
-| 创建时间 | 2025-01-20 |
-| 最后更新 | 2025-01-20 |
-| 维护者 | Dedsi Team |
-| 许可证 | MIT |
-| Vue 版本 | 3.5.26 |
-| TypeScript 版本 | 5.9.3 |
-| 文档格式 | Markdown + YAML Front Matter |
-| 文档规范 | SKILL v1.0 |
