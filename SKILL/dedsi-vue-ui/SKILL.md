@@ -81,6 +81,98 @@ Dedsi-Vue-UI 是一个基于 Vue 3 的组件库，提供了丰富的 UI 组件�
 - **单文件组件**：`Dedsi` + 功能名称（如 `DedsiAlert`、`DedsiButton`）
 - **组合组件**：主组件 + 子组件（如 `DedsiMenu` + `DedsiMenuItem`）
 
+### 组件使用规范
+
+**重要**：在模板中使用组件时，必须使用 `components` 数组中注册的 `name` 值（kebab-case 格式），而不是 PascalCase 的组件类名。
+
+| 组件类名（TypeScript 导入） | 模板中使用（name 值） |
+|--------------------------|-------------------|
+| `DedsiTable` | `dedsi-table` |
+| `DedsiButton` | `dedsi-button` |
+| `DedsiTag` | `dedsi-tag` |
+| `DedsiSplit` | `dedsi-split` |
+| `DedsiSpace` | `dedsi-space` |
+| `DedsiAlert` | `dedsi-alert` |
+| `DedsiTooltip` | `dedsi-tooltip` |
+| `DedsiTabs` | `dedsi-tabs` |
+| `DedsiTabPane` | `dedsi-tab-pane` |
+| `DedsiQRCode` | `dedsi-qrcode` |
+| `DedsiPopconfirm` | `dedsi-popconfirm` |
+| `DedsiPopover` | `dedsi-popover` |
+| `DedsiPopper` | `dedsi-popper` |
+| `DedsiImage` | `dedsi-image` |
+| `DedsiCard` | `dedsi-card` |
+| `DedsiBadge` | `dedsi-badge` |
+| `DedsiAvatar` | `dedsi-avatar` |
+| `DedsiBreadcrumb` | `dedsi-breadcrumb` |
+| `DedsiBreadcrumbItem` | `dedsi-breadcrumb-item` |
+| `DedsiDivider` | `dedsi-divider` |
+| `DedsiSegmented` | `dedsi-segmented` |
+| `DedsiStatistic` | `dedsi-statistic` |
+| `DedsiNumberConverter` | `dedsi-number-converter` |
+| `DedsiTypography` | `dedsi-typography` |
+| `DedsiDropdown` | `dedsi-dropdown` |
+| `DedsiCountdown` | `dedsi-countdown` |
+| `DedsiEmpty` | `dedsi-empty` |
+| `DedsiResult` | `dedsi-result` |
+| `DedsiDialog` | `dedsi-dialog` |
+| `DedsiModal` | `dedsi-modal` |
+| `DedsiMarquee` | `dedsi-marquee` |
+| `DedsiScrollbar` | `dedsi-scrollbar` |
+| `DedsiSkeleton` | `dedsi-skeleton` |
+| `DedsiMenu` | `dedsi-menu` |
+| `DedsiDrawer` | `dedsi-drawer` |
+| `DedsiMenuItem` | `dedsi-menu-item` |
+| `DedsiSubMenu` | `dedsi-sub-menu` |
+| `DedsiRow` | `dedsi-row` |
+| `DedsiCol` | `dedsi-col` |
+| `DedsiForm` | `dedsi-form` |
+| `DedsiFormItem` | `dedsi-form-item` |
+| `DedsiInput` | `dedsi-input` |
+| `DedsiInputNumber` | `dedsi-input-number` |
+| `DedsiTextarea` | `dedsi-textarea` |
+| `DedsiInputPassword` | `dedsi-input-password` |
+| `DedsiSelect` | `dedsi-select` |
+| `DedsiSelectOption` | `dedsi-select-option` |
+| `DedsiDatePicker` | `dedsi-date-picker` |
+| `DedsiTimePicker` | `dedsi-time-picker` |
+| `DedsiTimeRangePicker` | `dedsi-time-range-picker` |
+| `DedsiMonthPicker` | `dedsi-month-picker` |
+| `DedsiRangePicker` | `dedsi-range-picker` |
+| `DedsiRadio` | `dedsi-radio` |
+| `DedsiRadioGroup` | `dedsi-radio-group` |
+| `DedsiRadioButton` | `dedsi-radio-button` |
+| `DedsiCheckbox` | `dedsi-checkbox` |
+| `DedsiCheckboxGroup` | `dedsi-checkbox-group` |
+| `DedsiSwitch` | `dedsi-switch` |
+| `DedsiSlider` | `dedsi-slider` |
+| `DedsiRate` | `dedsi-rate` |
+| `DedsiUpload` | `dedsi-upload` |
+| `DedsiTransfer` | `dedsi-transfer` |
+| `DedsiAutoComplete` | `dedsi-auto-complete` |
+| `DedsiCascader` | `dedsi-cascader` |
+| `DedsiTreeSelect` | `dedsi-tree-select` |
+| `DedsiMentions` | `dedsi-mentions` |
+
+**使用示例**：
+```vue
+<template>
+  <!-- ✅ 正确：使用 kebab-case 的 name 值 -->
+  <dedsi-button>点击</dedsi-button>
+  <dedsi-table :data="data" :columns="columns" />
+  <dedsi-alert type="success" title="成功" />
+
+  <!-- ❌ 错误：不要使用 PascalCase -->
+  <DedsiButton>点击</DedsiButton>
+  <DedsiTable :data="data" :columns="columns" />
+</template>
+
+<script setup lang="ts">
+// ✅ 导入时使用 PascalCase
+import { DedsiButton, DedsiTable, DedsiAlert } from 'dedsi-vue-ui'
+</script>
+```
+
 ### Props 定义规范
 
 - 使用 Vue 3 Composition API 的 `defineProps`
