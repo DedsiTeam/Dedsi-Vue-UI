@@ -55,6 +55,7 @@
              <DedsiMenu 
                :collapsed="collapsed"
                v-model:selected-keys="selectedKeys4"
+               v-model:open-keys="openKeys3"
                :items="menuItems"
              />
           </div>
@@ -82,6 +83,7 @@ const openKeys1 = ref(['sub-1'])
 
 const selectedKeys2 = ref(['item-1'])
 const openKeys2 = ref(['sub-1'])
+const openKeys3 = ref([])
 
 const selectedKeys3 = ref(['item-1'])
 const selectedKeys4 = ref(['item-1'])

@@ -1,6 +1,7 @@
 <template>
   <li 
     :class="itemClasses"
+    :style="itemStyle"
     @click.stop="handleClick"
     :title="item.label"
   >
@@ -44,6 +45,11 @@ const itemClasses = computed(() => [
   `dedsi-menu-item-${mode?.value || 'inline'}`
 ])
 
+const itemStyle = computed(() => {
+  if (mode?.value !== 'inline' || isMenuCollapsed.value) return {}
+  return { paddingLeft: `${20 + (props.level - 1) * 24}px` }
+})
+
 const handleClick = () => {
   if (props.item.disabled) return
   emit('click', props.item)
@@ -79,25 +85,13 @@ const handleClick = () => {
 .dedsi-menu-item-selected {
   background-color: var(--dedsi-primary-light, #e6f7ff);
   color: var(--dedsi-primary-color);
+  margin: 4px;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
-/* Vertical/Inline selected bar */
-.dedsi-menu-item-selected::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border-right: 3px solid var(--dedsi-primary-color);
-  transform: scaleY(0.0001);
-  opacity: 0;
-  transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.dedsi-menu-item-selected:not(.dedsi-menu-item-collapsed)::after {
-  transform: scaleY(1);
-  opacity: 1;
-}
+/* Vertical/Inline selected bar removed by user request */
+/* .dedsi-menu-item-selected::after styles removed */
 
 .dedsi-menu-item-horizontal.dedsi-menu-item-selected::after {
   top: auto;

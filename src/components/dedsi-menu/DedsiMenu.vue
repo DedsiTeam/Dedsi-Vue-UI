@@ -105,6 +105,7 @@ provide('menuCollapsed', computed(() => props.collapsed))
   transition: background 0.3s, width 0.3s cubic-bezier(0.2, 0, 0, 1);
   outline: none;
   font-size: 14px;
+  overflow: hidden;
 }
 
 .dedsi-menu-horizontal {

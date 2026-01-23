@@ -226,3 +226,4 @@ export {
 export type { Column } from './dedsi-table'
 export type { DropdownMenuItem } from './dedsi-dropdown'
 export type { MenuItem } from './dedsi-menu'
+export type { DedsiFormInstance } from './dedsi-form'

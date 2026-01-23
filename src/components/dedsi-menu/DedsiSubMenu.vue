@@ -5,7 +5,9 @@
     @mouseleave="handleMouseLeave"
   >
     <div 
+      ref="titleRef"
       class="dedsi-submenu-title" 
+      :style="titleStyle"
       :data-menu-key="item.key"
       @click.stop="handleTitleClick"
     >
@@ -27,6 +29,7 @@
       <Transition 
         :name="isPopup ? 'dedsi-fade' : 'dedsi-submenu-expand'"
         @enter="onEnter"
+        @after-enter="onAfterEnter"
         @leave="onLeave"
       >
         <ul 
@@ -94,6 +97,7 @@ const currentTheme = computed(() => theme?.value || 'light')
 const isCollapsed = inject<ComputedRef<boolean>>('menuCollapsed')
 const hoverOpen = ref(false)
 const subMenuRef = ref<HTMLElement | null>(null)
+const titleRef = ref<HTMLElement | null>(null)
 const popupStyle = ref<Record<string, string>>({})
 
 const isMenuCollapsed = computed(() => isCollapsed?.value ?? false)
@@ -119,6 +123,11 @@ const submenuClasses = computed(() => [
   isMenuCollapsed.value && 'dedsi-submenu-collapsed',
   `dedsi-submenu-${theme?.value || 'light'}`
 ])
+
+const titleStyle = computed(() => {
+  if (props.mode !== 'inline' || isMenuCollapsed.value) return {}
+  return { paddingLeft: `${20 + (props.level - 1) * 24}px` }
+})
 
 const handleTitleClick = () => {
   if (props.collapsed || props.mode === 'horizontal') return
@@ -157,13 +166,13 @@ onUnmounted(() => {
 
 const calculatePlacement = () => {
   if (!subMenuRef.value) return
+  if (!titleRef.value) return
   
   // 获取触发器的位置
-  const triggerEl = document.querySelector(`[data-menu-key="${props.item.key}"]`) || 
-                    subMenuRef.value.parentElement?.querySelector('.dedsi-submenu-title')
+  const triggerEl = titleRef.value
   
   // 如果找不到触发器，我们回退到相对定位（虽然 teleport 之后会有问题）
-  const triggerRect = triggerEl?.getBoundingClientRect() || { top: 0, left: 0, width: 0, height: 0, right: 0, bottom: 0 }
+  const triggerRect = triggerEl.getBoundingClientRect()
   
   const viewportWidth = window.innerWidth
   const viewportHeight = window.innerHeight
@@ -177,9 +186,9 @@ const calculatePlacement = () => {
 
   if (props.mode === 'horizontal' && props.level === 1) {
     // 顶级横向：放在触发器下方
-    style.top = `${triggerRect.bottom}px`
+    style.top = `${triggerRect.bottom + 5}px`
     style.left = `${triggerRect.left}px`
-    style.maxHeight = `${viewportHeight - triggerRect.bottom - 10}px`
+    style.maxHeight = `${viewportHeight - triggerRect.bottom - 15}px`
     
     // 边界检查
     if (triggerRect.left + rect.width > viewportWidth) {
@@ -222,6 +231,11 @@ const onEnter = (el: any) => {
   el.style.height = '0'
   el.offsetHeight // trigger reflow
   el.style.height = el.scrollHeight + 'px'
+}
+
+const onAfterEnter = (el: any) => {
+  if (isPopup.value) return
+  el.style.height = ''
 }
 
 const onLeave = (el: any) => {
@@ -285,11 +299,9 @@ const onLeave = (el: any) => {
 
 .dedsi-menu-sub {
   margin: 0;
-  padding: 0;
+  padding:0;
   background: var(--dedsi-bg-secondary, #fafafa);
-  overflow-x: hidden;
-  overflow-y: auto;
-  transition: height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  overflow: hidden;
 }
 
 .dedsi-menu-sub::-webkit-scrollbar {
@@ -390,7 +402,16 @@ const onLeave = (el: any) => {
 /* Animations */
 .dedsi-submenu-expand-enter-active,
 .dedsi-submenu-expand-leave-active {
-  transition: height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  overflow: hidden;
+  will-change: height, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.dedsi-submenu-expand-enter-from,
+.dedsi-submenu-expand-leave-to {
+  opacity: 0;
 }
 
 .dedsi-fade-enter-active,
@@ -402,5 +423,9 @@ const onLeave = (el: any) => {
 .dedsi-fade-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+}
+
+.dedsi-submenu.dedsi-submenu-light .dedsi-submenu-title>.dedsi-menu-item-title {
+  margin-right: 4px;
 }
 </style>
