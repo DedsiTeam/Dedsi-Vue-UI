@@ -73,7 +73,7 @@
           v-model:value="localPageSize"
           :options="pageSizeOptions"
           style="width: 110px"
-          @update:model-value="handlePageSizeChange"
+          @change="handlePageSizeChange"
         />
         <span class="dedsi-pagination-sizes-text">条/页</span>
       </div>
@@ -133,12 +133,11 @@ const pageSizeOptions = [
   { label: '100 条/页', value: 100 }
 ]
 
-const handlePageSizeChange = (val: string | number) => {
-  const size = typeof val === 'string' ? parseInt(val) : val
-  emit('page-size-change', size)
+const handlePageSizeChange = (value: any) => {
+  emit('page-size-change', value)
   // 当切换页码大小时，通常回到第一页
   changePage(1)
-}
+};
 
 // 计算总页数
 const totalPages = computed(() => Math.ceil(props.total / localPageSize.value))
@@ -289,7 +288,7 @@ const pageSize = computed(() => localPageSize.value)
 
 .dedsi-pagination-btn:hover:not(:disabled) {
   border-color: var(--dedsi-primary-color);
-  color: var(--dedsi-primary-color);
+  font-weight: bold;
 }
 
 .dedsi-pagination-btn.active {
