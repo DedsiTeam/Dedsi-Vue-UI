@@ -98,6 +98,12 @@ const componentsRoutes: RouteRecordRaw = {
             meta: { title: 'Dedsi Card' }
         },
         {
+            path: '/components/dedsi-descriptions',
+            name: 'DedsiDescriptionsDemo',
+            component: () => import('@/views/componentViews/dedsi-descriptions/index.vue'),
+            meta: { title: 'Dedsi Descriptions' }
+        },
+        {
             path: '/components/dedsi-badge',
             name: 'DedsiBadgeDemo',
             component: () => import('@/views/componentViews/dedsi-badge/index.vue'),

@@ -1,25 +1,46 @@
 ﻿<template>
   <div class="dedsi-table-wrapper">
-    <!-- 表格 -->
-    <table class="dedsi-table" :class="{ 'dedsi-table-bordered': bordered }">
+    <div class="dedsi-table-scroll">
+      <!-- 表格 -->
+      <table class="dedsi-table" :class="{ 'dedsi-table-bordered': bordered }">
       <colgroup>
         <col v-if="showIndex" width="70px" />
         <col v-for="col in columns" :key="col.key" :style="{ width: col.width }" />
       </colgroup>
       <thead>
         <tr>
-          <th v-if="showIndex" style="text-align: center">{{ indexColumnTitle }}</th>
-          <th v-for="col in columns" :key="col.key" :style="{ textAlign: col.align || 'left' }">
+          <th
+            v-if="showIndex"
+            :class="getIndexFixedCellClass()"
+            :style="getIndexCellStyle(true)"
+          >
+            {{ indexColumnTitle }}
+          </th>
+          <th
+            v-for="col in columns"
+            :key="col.key"
+            :class="getFixedCellClass(col)"
+            :style="{ textAlign: col.align || 'left', ...getFixedCellStyle(col, true) }"
+          >
             {{ col.title }}
           </th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(row, rowIndex) in data" :key="rowIndex">
-          <td v-if="showIndex" style="text-align: center">
+          <td
+            v-if="showIndex"
+            :class="getIndexFixedCellClass()"
+            :style="getIndexCellStyle(false)"
+          >
             {{ (currentPage - 1) * pageSize + rowIndex + 1 }}
           </td>
-          <td v-for="col in columns" :key="col.key" :style="{ textAlign: col.align || 'left' }">
+          <td
+            v-for="col in columns"
+            :key="col.key"
+            :class="getFixedCellClass(col)"
+            :style="{ textAlign: col.align || 'left', ...getFixedCellStyle(col, false) }"
+          >
             <slot :name="col.key" :row="row" :value="row[col.key]">
               {{ row[col.key] }}
             </slot>
@@ -31,7 +52,8 @@
           </td>
         </tr>
       </tbody>
-    </table>
+      </table>
+    </div>
 
     <!-- 分页 -->
     <div class="dedsi-pagination" v-if="pagination && totalPages > 1">
@@ -82,7 +104,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, type CSSProperties } from 'vue'
 import { DedsiSelect } from '../dedsi-select'
 
 export interface Column {
@@ -90,6 +112,7 @@ export interface Column {
   title: string
   width?: string
   align?: 'left' | 'center' | 'right'
+  fixed?: 'left' | 'right'
 }
 
 interface Props {
@@ -99,6 +122,7 @@ interface Props {
   pageSize?: number
   bordered?: boolean
   showIndex?: boolean
+  indexFixed?: boolean
   indexColumnTitle?: string
   pagination?: boolean
 }
@@ -107,6 +131,7 @@ const props = withDefaults(defineProps<Props>(), {
   pageSize: 10,
   bordered: false,
   showIndex: false,
+  indexFixed: false,
   indexColumnTitle: '序号',
   pagination: true
 })
@@ -115,6 +140,127 @@ const emit = defineEmits<{
   (e: 'page-change', page: number): void
   (e: 'page-size-change', pageSize: number): void
 }>()
+
+const DEFAULT_COLUMN_WIDTH = 120
+const INDEX_COLUMN_WIDTH = 70
+
+const parseColumnWidth = (width?: string) => {
+  if (!width) return DEFAULT_COLUMN_WIDTH
+
+  const pxMatch = width.trim().match(/^(\d+(\.\d+)?)px$/)
+  if (pxMatch) {
+    return Number(pxMatch[1])
+  }
+
+  const numericWidth = Number.parseFloat(width)
+  return Number.isFinite(numericWidth) ? numericWidth : DEFAULT_COLUMN_WIDTH
+}
+
+const leftFixedOffsets = computed(() => {
+  const offsets: Record<string, number> = {}
+  let offset = props.showIndex && props.indexFixed ? INDEX_COLUMN_WIDTH : 0
+
+  props.columns.forEach((col) => {
+    if (col.fixed === 'left') {
+      offsets[col.key] = offset
+      offset += parseColumnWidth(col.width)
+    }
+  })
+
+  return offsets
+})
+
+const rightFixedOffsets = computed(() => {
+  const offsets: Record<string, number> = {}
+  let offset = 0
+
+  for (let i = props.columns.length - 1; i >= 0; i--) {
+    const col = props.columns[i]
+    if (!col) continue
+    if (col.fixed === 'right') {
+      offsets[col.key] = offset
+      offset += parseColumnWidth(col.width)
+    }
+  }
+
+  return offsets
+})
+
+const leftFixedKeys = computed(() => props.columns.filter(col => col.fixed === 'left').map(col => col.key))
+const rightFixedKeys = computed(() => props.columns.filter(col => col.fixed === 'right').map(col => col.key))
+
+const getFixedCellClass = (col: Column) => {
+  const classes: string[] = []
+
+  if (!col.fixed) return classes
+
+  classes.push('dedsi-table-cell-fixed')
+
+  if (col.fixed === 'left') {
+    classes.push('dedsi-table-cell-fixed-left')
+    if (leftFixedKeys.value[leftFixedKeys.value.length - 1] === col.key) {
+      classes.push('dedsi-table-cell-fixed-left-last')
+    }
+  }
+
+  if (col.fixed === 'right') {
+    classes.push('dedsi-table-cell-fixed-right')
+    if (rightFixedKeys.value[0] === col.key) {
+      classes.push('dedsi-table-cell-fixed-right-first')
+    }
+  }
+
+  return classes
+}
+
+const getFixedCellStyle = (col: Column, isHeader = false) => {
+  if (!col.fixed) return {}
+
+  const baseStyle = {
+    position: 'sticky',
+    zIndex: isHeader ? 3 : 2,
+    background: isHeader ? 'var(--dedsi-bg-secondary)' : 'var(--dedsi-bg-color)'
+  }
+
+  if (col.fixed === 'left') {
+    return {
+      ...baseStyle,
+      left: `${leftFixedOffsets.value[col.key] ?? 0}px`
+    }
+  }
+
+  return {
+    ...baseStyle,
+    right: `${rightFixedOffsets.value[col.key] ?? 0}px`
+  }
+}
+
+const getIndexFixedCellClass = () => {
+  if (!props.indexFixed) return []
+
+  const classes = ['dedsi-table-cell-fixed', 'dedsi-table-cell-fixed-left']
+  if (leftFixedKeys.value.length === 0) {
+    classes.push('dedsi-table-cell-fixed-left-last')
+  }
+
+  return classes
+}
+
+const getIndexFixedCellStyle = (isHeader = false): CSSProperties => {
+  if (!props.indexFixed) return {}
+
+  return {
+    position: 'sticky',
+    zIndex: isHeader ? 3 : 2,
+    background: isHeader ? 'var(--dedsi-bg-secondary)' : 'var(--dedsi-bg-color)',
+    left: '0px'
+  }
+}
+
+const getIndexCellStyle = (isHeader = false): CSSProperties => ({
+  textAlign: 'center',
+  ...getIndexFixedCellStyle(isHeader)
+})
 
 const currentPage = ref(1)
 
@@ -189,9 +335,17 @@ const pageSize = computed(() => localPageSize.value)
   width: 100%;
 }
 
+.dedsi-table-scroll {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+
 .dedsi-table {
   width: 100%;
-  border-collapse: collapse;
+  min-width: max-content;
+  border-collapse: separate;
+  border-spacing: 0;
   background: var(--dedsi-bg-color);
 }
 
@@ -203,6 +357,7 @@ const pageSize = computed(() => localPageSize.value)
 }
 
 .dedsi-table th {
+  position: relative;
   background: var(--dedsi-bg-secondary);
   font-weight: 500;
   color: var(--dedsi-text-primary);
@@ -218,6 +373,10 @@ const pageSize = computed(() => localPageSize.value)
   background: var(--dedsi-bg-secondary);
 }
 
+.dedsi-table tbody tr:hover .dedsi-table-cell-fixed {
+  background: var(--dedsi-bg-secondary) !important;
+}
+
 .dedsi-table tbody tr:last-child td {
   border-bottom: none;
 }
@@ -225,7 +384,6 @@ const pageSize = computed(() => localPageSize.value)
 /* 边框样式 */
 .dedsi-table-bordered {
   border-top: 1px solid var(--dedsi-border-color);
-  border-left: 1px solid var(--dedsi-border-color);
   border-bottom: 1px solid var(--dedsi-border-color);
 }
 
@@ -233,6 +391,11 @@ const pageSize = computed(() => localPageSize.value)
 .dedsi-table-bordered td {
   border-right: 1px solid var(--dedsi-border-color);
   border-bottom: 1px solid var(--dedsi-border-color);
+}
+
+.dedsi-table-bordered thead tr > th:first-child,
+.dedsi-table-bordered tbody tr > td:first-child {
+  border-left: 1px solid var(--dedsi-border-color);
 }
 
 .dedsi-table-empty {

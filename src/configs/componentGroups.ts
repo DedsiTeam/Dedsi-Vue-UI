@@ -45,6 +45,7 @@ export const componentGroups: ComponentGroup[] = [
             { title: 'Dedsi QRCode', name: 'DedsiQRCodeDemo', path: '/components/dedsi-qrcode', desc: '二维码组件，用于生成二维条形码' },
             { title: 'Dedsi Image', name: 'DedsiImageDemo', path: '/components/dedsi-image', desc: '图片组件，支持预览等功能' },
             { title: 'Dedsi Card', name: 'DedsiCardDemo', path: '/components/dedsi-card', desc: '卡片组件，包含标题、内容和操作区域的容器' },
+            { title: 'Dedsi Descriptions', name: 'DedsiDescriptionsDemo', path: '/components/dedsi-descriptions', desc: '描述列表组件，用于展示多组只读字段信息' },
             { title: 'Dedsi Badge', name: 'DedsiBadgeDemo', path: '/components/dedsi-badge', desc: '徽标数，出现在按钮、图标旁的数字或状态标记' },
             { title: 'Dedsi Avatar', name: 'DedsiAvatarDemo', path: '/components/dedsi-avatar', desc: '头像，用来代表用户或事物' },
             { title: 'Dedsi Statistic', name: 'DedsiStatisticDemo', path: '/components/dedsi-statistic', desc: '统计数值，用于展示统计数据' },

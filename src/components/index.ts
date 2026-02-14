@@ -16,6 +16,7 @@ import { DedsiPopover } from './dedsi-popover'
 import { DedsiPopper } from './dedsi-popper'
 import { DedsiImage } from './dedsi-image'
 import { DedsiCard } from './dedsi-card'
+import { DedsiDescriptions, DedsiDescriptionsItem } from './dedsi-descriptions'
 import { DedsiBadge } from './dedsi-badge'
 import { DedsiAvatar } from './dedsi-avatar'
 import { DedsiBreadcrumb, DedsiBreadcrumbItem } from './dedsi-breadcrumb'
@@ -80,6 +81,8 @@ const components = [
     { name: 'dedsi-popper', component: DedsiPopper },
     { name: 'dedsi-image', component: DedsiImage },
     { name: 'dedsi-card', component: DedsiCard },
+    { name: 'dedsi-descriptions', component: DedsiDescriptions },
+    { name: 'dedsi-descriptions-item', component: DedsiDescriptionsItem },
     { name: 'dedsi-badge', component: DedsiBadge },
     { name: 'dedsi-avatar', component: DedsiAvatar },
     { name: 'dedsi-breadcrumb', component: DedsiBreadcrumb },
@@ -170,6 +173,8 @@ export {
     DedsiPopper,
     DedsiImage,
     DedsiCard,
+    DedsiDescriptions,
+    DedsiDescriptionsItem,
     DedsiBadge,
     DedsiAvatar,
     DedsiBreadcrumb,
